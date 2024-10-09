@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Pin {
     private String pin = "";
+    private final static String PIN_VALUES = "0123456789";
     public Pin(int numberOfDigits) {
         if(numberOfDigits > 0){
             if(numberOfDigits == 4){
@@ -21,9 +22,8 @@ public class Pin {
     private static String generate4DigitsPin(){
         String tmpPin = "";
         Random random = new Random();
-        String pinValues = "0123456789";
         for(int i = 0; i < 4; i++){
-            tmpPin += pinValues.charAt(random.nextInt(pinValues.length()-1));
+            tmpPin += PIN_VALUES.charAt(random.nextInt(PIN_VALUES.length()-1));
         }
         return tmpPin;
     }
@@ -31,9 +31,8 @@ public class Pin {
     private static String generate6DigitsPin(){
         String tmpPin = "";
         Random random = new Random();
-        String pinValues = "0123456789";
         for(int i = 0; i < 6; i++){
-            tmpPin += pinValues.charAt(random.nextInt(pinValues.length()-1));
+            tmpPin += PIN_VALUES.charAt(random.nextInt(PIN_VALUES.length()-1));
         }
         return tmpPin;
     }

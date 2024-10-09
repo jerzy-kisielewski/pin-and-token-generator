@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Token {
     private String token = "";
+    private final static String TOKEN_VAULES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     public Token(int numberOfChars){
         if(numberOfChars > 0){
             if(numberOfChars == 12){
@@ -19,21 +20,19 @@ public class Token {
     }
 
     private static String generate12CharToken(){
-        String tokenValues = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         Random random = new Random();
         String tmpToken = "";
         for(int i = 0; i < 12; i++){
-            tmpToken += tokenValues.charAt(random.nextInt(tokenValues.length()-1));
+            tmpToken += TOKEN_VAULES.charAt(random.nextInt(TOKEN_VAULES.length()-1));
         }
         return tmpToken;
     }
 
     private static String generate16CharToken(){
-        String tokenValues = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         Random random = new Random();
         String tmpToken = "";
         for(int i = 0; i < 16; i++){
-            tmpToken += tokenValues.charAt(random.nextInt(tokenValues.length()-1));
+            tmpToken += TOKEN_VAULES.charAt(random.nextInt(TOKEN_VAULES.length()-1));
         }
         return tmpToken;
     }
